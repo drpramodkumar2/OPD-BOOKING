@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Pramod's OPD Appointment Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Book Your OPD Appointment</h1>
+            <p>Expert Pediatric Care by Dr. Pramod</p>
+        </header>
+
+        <form action="#" method="POST" onsubmit="sendSMS(event)">
+            <label for="name">Child's Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter child's name" required>
+
+            <label for="phone">Parent Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter parent phone number" required>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time</label>
+            <select id="time" name="time" required>
+                <!-- Morning Slots (9:00 AM to 2:00 PM) -->
+                <option value="09:00">09:00 AM</option>
+                <option value="09:15">09:15 AM</option>
+                <option value="09:30">09:30 AM</option>
+                <option value="09:45">09:45 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:15">10:15 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="10:45">10:45 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:15">11:15 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="11:45">11:45 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:15">12:15 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="12:45">12:45 PM</option>
+                <option value="01:00">01:00 PM</option>
+                <option value="01:15">01:15 PM</option>
+                <option value="01:30">01:30 PM</option>
+                <option value="01:45">01:45 PM</option>
+
+                <!-- Evening Slots (5:00 PM to 8:00 PM) -->
+                <option value="05:00">05:00 PM</option>
+                <option value="05:15">05:15 PM</option>
+                <option value="05:30">05:30 PM</option>
+                <option value="05:45">05:45 PM</option>
+                <option value="06:00">06:00 PM</option>
+                <option value="06:15">06:15 PM</option>
+                <option value="06:30">06:30 PM</option>
+                <option value="06:45">06:45 PM</option>
+                <option value="07:00">07:00 PM</option>
+                <option value="07:15">07:15 PM</option>
+                <option value="07:30">07:30 PM</option>
+                <option value="07:45">07:45 PM</option>
+
+                <!-- Emergency Slots (8:00 PM to 10:00 PM) -->
+                <option value="08:00">08:00 PM</option>
+                <option value="08:15">08:15 PM</option>
+                <option value="08:30">08:30 PM</option>
+                <option value="08:45">08:45 PM</option>
+                <option value="09:00">09:00 PM</option>
+                <option value="09:15">09:15 PM</option>
+                <option value="09:30">09:30 PM</option>
+                <option value="09:45">09:45 PM</option>
+            </select>
+
+            <label for="reason">Reason for Appointment</label>
+            <select id="reason" name="reason" required>
+                <option value="Sickness">Sickness</option>
+                <option value="Vaccination">Vaccination</option>
+                <option value="Follow-up Visit">Follow-up Visit</option>
+            </select>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+
+        <div class="footer">
+            <p>&copy; 2025 Dr. Pramod. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function sendSMS(event) {
+            event.preventDefault();
+            const phoneNumber = document.getElementById('phone').value;
+            alert(`Appointment successfully booked. Confirmation SMS will be sent to ${phoneNumber}.`);
+            console.log(`Sending SMS to: ${phoneNumber}`);
+        }
+    </script>
+</body>
+</html>
